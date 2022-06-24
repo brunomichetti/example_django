@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import SimpleRouter
+
+from example_app.views import ExampleViewSet
+
+
+router = SimpleRouter()
+router.register('examples', ExampleViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('s3direct/', include('s3direct.urls')),
+    path('s3direct/', include('s3direct.urls')),
 ]
+
+urlpatterns += router.urls

@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-from pathlib import Path
 import environ
+import os
+
+from pathlib import Path
 from django.utils import timezone
 from django.utils.text import slugify
 
@@ -129,7 +131,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+STATIC_ROOT = str(ROOT_DIR / 'staticfiles')
 STATIC_URL = '/static/'
 
 # Default primary key field type
@@ -164,3 +166,24 @@ aws_s3_domain = AWS_S3_CUSTOM_DOMAIN or f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws
 # ------------------------------------------------------------------------------
 # https://github.com/bradleyg/django-s3direct
 AWS_S3_ENDPOINT_URL = f'https://s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+
+
+EXAMPLE_DEST_KEY = 'images/example-images/'
+TIMESTAMP_FORMAT = '%m-%d-%Y_%H-%M-%S-%f'
+
+def normalize_filename(filename):
+    name, extension = os.path.splitext(filename)
+    time_stamp = timezone.now().strftime(TIMESTAMP_FORMAT)
+    return f'{time_stamp}--{slugify(name)}{extension}'
+
+
+S3DIRECT_DESTINATIONS = {
+   'example_destination': {
+       'key': lambda filename: f'{EXAMPLE_DEST_KEY}/{normalize_filename(filename)}',
+       'region': AWS_S3_REGION_NAME,
+       'acl': 'private',
+       'allow_existence_optimization': False,
+   },
+}
+
+AWS_PRESIGNED_URL_EXPIRATION_TIME_MINUTES = 60

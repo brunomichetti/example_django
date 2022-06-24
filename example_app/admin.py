@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from django.contrib import admin
+
+from example_app.models import Example
+
+
+class ExampleAdmin(admin.ModelAdmin):
+    fields = ('image',)
+
+
+admin.site.register(Example, ExampleAdmin)

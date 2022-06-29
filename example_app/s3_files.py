@@ -34,7 +34,7 @@ def get_presigned_url(object_key: str) -> str:
     return url
 
 
-def get_presigned_url_to_upload_file(object_key: str) -> Dict[str, Any]:
+def get_presigned_url_dict_to_upload_file(object_key: str) -> Dict[str, Any]:
     '''
     Returns a dict with the necessary data to upload a file for the given key
     '''

@@ -11,5 +11,5 @@ class ExampleSerializer(serializers.ModelSerializer):
 
 
 class ExampleUploadURLSerializer(serializers.Serializer):
-    object_key = serializers.CharField(required=False)
+    object_key = serializers.CharField()
     upload_url_dict = serializers.DictField(required=False)

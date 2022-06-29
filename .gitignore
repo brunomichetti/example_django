@@ -276,3 +276,7 @@ waste_classifier_django/media/
 .envs/*
 
 .vscode/
+
+logfile
+
+Pipfile.lock

@@ -5,7 +5,7 @@ from rest_framework.request import Request
 
 from example_app.models import Example
 from example_app.serializers import ExampleSerializer, ExampleUploadURLSerializer
-from example_app.s3_files import get_presigned_url_to_upload_file
+from example_app.s3_files import get_presigned_url_dict_to_upload_file
 
 
 class ExampleViewSet(viewsets.ModelViewSet):
@@ -19,10 +19,10 @@ class ExampleViewSet(viewsets.ModelViewSet):
 
         object_key = serializer.validated_data['object_key']
 
-        upload_url = get_presigned_url_to_upload_file(object_key)
+        upload_url_dict = get_presigned_url_dict_to_upload_file(object_key)
 
         return_serializer = ExampleUploadURLSerializer(
-            data={'object_key': object_key, 'upload_url_dict': upload_url,}
+            data={'object_key': object_key, 'upload_url_dict': upload_url_dict,}
         )
         return_serializer.is_valid(raise_exception=True)
 

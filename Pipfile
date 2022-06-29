@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 psycopg2 = "*"
-django-s3direct = "==1.1.8"
+django-s3direct = "==2.0.3"
 django-environ = "==0.4.5"
 django = "==3.2"
 django-storages = "*"

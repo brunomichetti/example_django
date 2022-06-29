@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1216d29a54962b8661b392fcdde5e83c6c56cdcfdd36945d1a524af832bf0611"
+            "sha256": "7f2253483b1b3aeb62830105468f34c18189f50696afae0e73b14a1a4742afa3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,19 +26,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:42485c7c53eda9e49106d49a6bc222062428969dd27164fe346b1433d6de74ee",
-                "sha256:c13ef01bd6c8872e68141060bd046a3baa979e96524391efc880dfde4ed64e11"
+                "sha256:882091279f4520bf6b8b535e02dbef4fe14280404035a93ea5396821f10b4f4b",
+                "sha256:cc01e513a54914b2a8b5515cade3bc359f9001b108416664053f02882f85050f"
             ],
             "index": "pypi",
-            "version": "==1.24.15"
+            "version": "==1.24.19"
         },
         "botocore": {
             "hashes": [
-                "sha256:3799d5c8642b29b347418eb26d42e541d0dc24faa5e62bc8b3812722ab2bf139",
-                "sha256:aaa019265dfea61c5355a207b14283161002d4d94e0eb85194dd04f3bdba48be"
+                "sha256:850bec9363e10c56b2678c3742a48150f6201d7184695326a380fe7341075484",
+                "sha256:e52c77fb349ae5d2a36ba0c2d1dc1416d963f987139dc2e036d2d8d697e4b4c7"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.27.15"
+            "version": "==1.27.19"
         },
         "django": {
             "hashes": [
@@ -58,12 +58,10 @@
         },
         "django-s3direct": {
             "hashes": [
-                "sha256:10e729e9ec56bb2ad15add9fc534f0af278e2a9381477282d76a8095782d4a26",
-                "sha256:856ceab46618ead2055be2feae24bea7d51888e41e5656648e7ba5af85e8de56",
-                "sha256:fc08cf57b54614552479835374c16346ed7f43427dafc881681496b83f14ea48"
+                "sha256:84c1eee9b0804ff9b07a43ce59be33aa3e171ec3628e4bde1c11313f644ead63"
             ],
             "index": "pypi",
-            "version": "==1.1.8"
+            "version": "==2.0.3"
         },
         "django-storages": {
             "hashes": [
